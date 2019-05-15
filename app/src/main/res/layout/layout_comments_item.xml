@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/userPhoto"
+        android:layout_width="@dimen/dp_38"
+        android:layout_height="@dimen/dp_38"
+        android:layout_below="@id/introduction"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_45"
+        android:src="@drawable/abc" />
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/userPhoto"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_toRightOf="@id/userPhoto"
+        android:text="柳吱吱"
+        android:textColor="@color/c373737"
+        android:textSize="@dimen/sp_14"
+
+        />
+
+    <TextView
+        android:id="@+id/createdAt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userName"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_toRightOf="@id/userPhoto"
+        android:text="2017年3月11日"
+        android:textColor="@color/c_999999"
+        android:textSize="@dimen/sp_10" />
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/createdAt"
+        android:text="contentcontentcontentcontentcontent"
+        android:layout_marginLeft="@dimen/dp_67"
+        android:layout_marginTop="@dimen/dp_13"
+        android:textSize="@dimen/sp_14"
+        android:textColor="@color/c_636363"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:background="@color/c_dcdcdc"
+        android:layout_below="@id/content"
+        android:layout_marginTop="@dimen/dp_21"
+        android:layout_marginLeft="@dimen/dp_58"
+        />
+</RelativeLayout>

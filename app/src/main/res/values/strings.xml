@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">EveryWhereTrip</string>
+    <string name="unknow_error">解析异常</string>
+    <string name="conn_error">连接失败</string>
+    <string name="conn_timeout">连接超时</string>
+    <string name="net_error">网络错误</string>
+    <string name="parse_error">解析异常</string>
+    <string name="net_unused">当前网络不可用</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="DeleteText">删除</string>
+    <string name="message_show">消息详情</string>
+    <string name="wait_please">请稍后...</string>
+    <string name="agree_protocol">登录或注册即同意伴米旅行用户协议</string>
+    <string name="or">or</string>
+    <string name="login_success">登陆成功</string>
+    <string name="login_fail">登陆失败</string>
+    <string name="money">￥28.00</string>
+    <string name="my_purse">我的钱包</string>
+    <string name="my_purse_money">99</string>
+    <string name="element">元</string>
+    <string name="win_a_prize">赢取奖金</string>
+    <string name="my_card_volume">我的卡卷</string>
+    <string name="already_bought">已购旅行</string>
+    <string name="my_favorite">我的收藏</string>
+    <string name="my_vote">我的关注</string>
+    <string name="service">联系客服</string>
+    <string name="verify_code">验证码</string>
+    <string name="personal">个人信息</string>
+    <string name="log_out">退出登录</string>
+    <string name="bind_phone">绑定手机</string>
+    <string name="change_password">修改密码</string>
+    <string name="head_portrait">头像</string>
+    <string name="user_nickname">用户昵称</string>
+    <string name="gender">性别</string>
+    <string name="personalized_signature">个性签名</string>
+    <string name="feedback">意见反馈</string>
+    <string name="version_checking">版本检测</string>
+    <string name="banben">版本检测</string>
+    <string name="send_again">发送验证码</string>
+    <string name="get_verify_fail">失败</string>
+    <string name="modify_ickname">修改昵称</string>
+    <string name="Individuality_signature">个性签名</string>
+    <string name="my_collection">我的收藏</string>
+    <string name="banmishow">伴米详情</string>
+    <string name="all_evaluation">全部评价</string>
+    <string name="show">详情</string>
+</resources>
