@@ -122,6 +122,10 @@
         <activity android:name=".To_viewActivity"
             android:theme="@style/NoAppTheme"
             ></activity>
+
+        <meta-data
+            android:name="channel"
+            android:value=""/>
     </application>
 
 </manifest>

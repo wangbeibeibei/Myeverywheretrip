@@ -76,7 +76,8 @@
                         android:id="@+id/cardURL"
                         android:layout_width="@dimen/dp_120"
                         android:layout_height="@dimen/dp_160"
-                        android:src="@mipmap/zhanweitu_home_kapian" />
+                        android:src="@mipmap/zhanweitu_home_kapian"
+                        />
 
                     <TextView
                         android:id="@+id/name"

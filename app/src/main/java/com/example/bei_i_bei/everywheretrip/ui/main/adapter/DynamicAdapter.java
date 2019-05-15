@@ -1,15 +1,19 @@
 package com.example.bei_i_bei.everywheretrip.ui.main.adapter;
 
 import android.content.Context;
+import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Gallery;
 import android.widget.ImageView;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.bm.library.PhotoView;
@@ -19,6 +23,8 @@ import com.example.bei_i_bei.everywheretrip.bean.DynamicBean;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static android.widget.PopupWindow.*;
 
 public class DynamicAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context context;
@@ -66,7 +72,12 @@ public class DynamicAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             }
             mytopic.data.setText(list.get(i).getDate());
             mytopic.content.setText(list.get(i).getContent());
-            mytopic.imges.enable();
+            mytopic.imges.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    initPop(i);
+                }
+            });
 
 /*
             ArrayList<DynamicBean.ResultBean.ActivitiesBean> mlist = new ArrayList<>();
@@ -79,6 +90,28 @@ public class DynamicAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
            imageAdapter.notifyDataSetChanged();*/
         }
 
+    }
+
+    private void initPop(int i) {
+
+        View inflate = LayoutInflater.from(context).inflate(R.layout.layout_imgpopu, null);
+        PhotoView img_popu = inflate.findViewById(R.id.img_popu);
+        img_popu.enable();
+        Glide.with(context).load(list.get(i).getImages().get(0)).into(img_popu);
+
+        final PopupWindow popupWindow = new PopupWindow(inflate, Gallery.LayoutParams.MATCH_PARENT, Gallery.LayoutParams.MATCH_PARENT);
+        popupWindow.setBackgroundDrawable(new ColorDrawable(context.getResources().getColor(R.color.c_60000000)));
+        popupWindow.setOutsideTouchable(true);
+        popupWindow.showAtLocation(inflate, Gravity.CENTER,0,0);
+        img_popu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popupWindow.dismiss();
+
+            }
+
+
+        });
     }
 
     @Override
