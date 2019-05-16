@@ -21,6 +21,7 @@ import com.example.bei_i_bei.everywheretrip.presenter.BanMiShowPresenter;
 import com.example.bei_i_bei.everywheretrip.ui.main.adapter.VpBanMiShowAdapter;
 import com.example.bei_i_bei.everywheretrip.ui.main.fragment.DynamicFragment;
 import com.example.bei_i_bei.everywheretrip.ui.main.fragment.RouteFragment;
+import com.example.bei_i_bei.everywheretrip.util.Tools;
 import com.example.bei_i_bei.everywheretrip.view.BanMiShowView;
 import com.jaeger.library.StatusBarUtil;
 

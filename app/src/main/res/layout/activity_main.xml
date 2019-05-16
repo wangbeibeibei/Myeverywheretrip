@@ -418,6 +418,7 @@
                 android:layout_toRightOf="@id/icon_me_banben"
                 android:text="@string/banben"
                 android:textColor="@color/c_333333"
+                android:id="@+id/banben"
                 android:textSize="@dimen/sp_12" />
 
         </RelativeLayout>

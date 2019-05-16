@@ -2,9 +2,11 @@ package com.example.bei_i_bei.everywheretrip.presenter;
 
 import com.example.bei_i_bei.everywheretrip.base.BasePresenter;
 import com.example.bei_i_bei.everywheretrip.bean.BalanceBean;
+import com.example.bei_i_bei.everywheretrip.bean.GetVersionInfoBean;
 import com.example.bei_i_bei.everywheretrip.bean.InformationBean;
 import com.example.bei_i_bei.everywheretrip.model.MainModel;
 import com.example.bei_i_bei.everywheretrip.net.ResultCallBack;
+import com.example.bei_i_bei.everywheretrip.util.ToastUtil;
 import com.example.bei_i_bei.everywheretrip.view.MainView;
 
 public class MainPresenter extends BasePresenter<MainView> {
@@ -57,5 +59,25 @@ public class MainPresenter extends BasePresenter<MainView> {
 
             }
         });
+    }
+
+    public void getVersionlnfo() {
+        mainModel.getVersionlnfo(new ResultCallBack<GetVersionInfoBean>() {
+            @Override
+            public void onSuccess(GetVersionInfoBean bean) {
+                if (bean!=null){
+                    if (mMvpView!=null){
+                        mMvpView.setVersionlnfo(bean);
+                    }
+                }
+            }
+
+            @Override
+            public void onFail(String msg) {
+
+                ToastUtil.showShort(msg);
+            }
+        });
+
     }
 }

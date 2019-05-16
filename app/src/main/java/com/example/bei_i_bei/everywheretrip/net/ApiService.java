@@ -9,6 +9,7 @@ import com.example.bei_i_bei.everywheretrip.bean.Cancel_collectionBean;
 import com.example.bei_i_bei.everywheretrip.bean.CollectionBean;
 import com.example.bei_i_bei.everywheretrip.bean.DynamicBean;
 import com.example.bei_i_bei.everywheretrip.bean.FollowBanMiBean;
+import com.example.bei_i_bei.everywheretrip.bean.GetVersionInfoBean;
 import com.example.bei_i_bei.everywheretrip.bean.HomeShowBean;
 import com.example.bei_i_bei.everywheretrip.bean.InformationBean;
 import com.example.bei_i_bei.everywheretrip.bean.MainBean;
@@ -181,6 +182,22 @@ public interface ApiService {
     @Headers("banmi-app-token:UbUWXq7IAUBzJaVwSvUwVjsJbFpEtI2tRSgPUDvcFrvtin4OIpQsRsPF7vV63OWTwHhTLRck5aAyixw6b619f7HXQhti89trDntpsQptaR6Uk234TKZXN17qg1idjyX59VFg")
     Observable<DynamicBean> getDynamic(@Path("banmiId")int banmiId,@Query("page")int page);
 
+
+    /*
+    * 获取版本信息  https://api.banmi.com/api/app/common/getVersionInfo?operating_system=android
+    * */
+    String  VersionInfoUrl=" https://api.banmi.com/api/";
+    @GET("app/common/getVersionInfo?operating_system=android")
+    Observable<GetVersionInfoBean> getVersionInfo();
+
+
+    /*
+    *下载apk地址  //http://cdn.banmi.com/banmiapp/apk/banmi_330.apk
+    * */
+
+    String banmiapkUrl="http://cdn.banmi.com/";
+    @GET("banmiapp/apk/banmi_330.apk")
+    Observable<ResponseBody> getBanMiApk();
 }
 
 

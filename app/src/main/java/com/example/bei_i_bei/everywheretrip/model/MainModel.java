@@ -2,9 +2,11 @@ package com.example.bei_i_bei.everywheretrip.model;
 
 import com.example.bei_i_bei.everywheretrip.base.BaseModel;
 import com.example.bei_i_bei.everywheretrip.bean.BalanceBean;
+import com.example.bei_i_bei.everywheretrip.bean.GetVersionInfoBean;
 import com.example.bei_i_bei.everywheretrip.bean.InformationBean;
 import com.example.bei_i_bei.everywheretrip.bean.MainBean;
 import com.example.bei_i_bei.everywheretrip.net.ApiService;
+import com.example.bei_i_bei.everywheretrip.net.BaseObserver;
 import com.example.bei_i_bei.everywheretrip.net.HttpUtils;
 import com.example.bei_i_bei.everywheretrip.net.ResultCallBack;
 import com.example.bei_i_bei.everywheretrip.net.RxUtils;
@@ -68,9 +70,9 @@ public class MainModel extends BaseModel {
                     @Override
                     public void onNext(BalanceBean balanceBean) {
 
-                        if (balanceBean!=null){
+                        if (balanceBean != null) {
                             resultCallBack.onSuccess(balanceBean);
-                        }else {
+                        } else {
                             resultCallBack.onFail("错误");
                         }
                     }
@@ -107,9 +109,9 @@ public class MainModel extends BaseModel {
                     @Override
                     public void onNext(InformationBean informationBean) {
 
-                        if (informationBean!=null){
+                        if (informationBean != null) {
                             resultCallBack.onSuccess(informationBean);
-                        }else {
+                        } else {
                             resultCallBack.onFail("错误");
                         }
                     }
@@ -125,5 +127,30 @@ public class MainModel extends BaseModel {
                     }
                 });
 
+    }
+
+    public void getVersionlnfo(final ResultCallBack<GetVersionInfoBean> resultCallBack) {
+        ApiService apiserver = HttpUtils.getInstance().getApiserver(ApiService.VersionInfoUrl, ApiService.class);
+        apiserver.getVersionInfo().compose(RxUtils.<GetVersionInfoBean>rxObserableSchedulerHelper())
+                .subscribe(new BaseObserver<GetVersionInfoBean>() {
+                    @Override
+                    public void onNext(GetVersionInfoBean getVersionInfoBean) {
+
+                        if (getVersionInfoBean!=null){
+                            resultCallBack.onSuccess(getVersionInfoBean);
+                        }
+                    }
+
+                    @Override
+                    public void error(String msg) {
+                        resultCallBack.onFail(msg);
+                    }
+
+                    @Override
+                    protected void subscribe(Disposable d) {
+
+                        addDisposable(d);
+                    }
+                });
     }
 }
